@@ -174,6 +174,7 @@ class Promise {
     }
 }
 
+// Promise的延迟对象
 Promise.defer = Promise.deferred  = function () {
     let dfd = {};
     dfd.promise = new Promise((resolve, reject) => {
@@ -182,5 +183,11 @@ Promise.defer = Promise.deferred  = function () {
     })
     return dfd
 }
+
+// const dfd = Promise.defer()
+// dfd.resolve()
+// dfd.reject()
+// return dfd.promise
+
 
 module.exports = Promise
