@@ -1,0 +1,21 @@
+function mockinstanceof(a,b){
+    a = a.__proto__;
+    b = b.protptype
+    while(true){
+        if(a === null){
+            return false
+        }
+        if(a===b){
+            return true
+        }
+        a = a.__proto__;
+    }
+}
+
+class ValidateStr {
+    static [Symbol.hasInstance](x){
+        return typeof(x) === 'string'
+    }
+}
+// ValidateStr[Symbol.hasInstance](x)
+// 找对象的constructor
